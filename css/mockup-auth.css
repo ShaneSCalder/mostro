@@ -1,0 +1,72 @@
+/* ======================== */
+/* Monstro Auth Styles      */
+/* css/mockup-auth.css      */
+/* ======================== */
+
+/* Assumes :root variables like --monstro-royal-blue are in mockup-style.css */
+
+body.bg-light {
+    /* Ensure full height for vertical centering if needed */
+}
+
+/* Center the card */
+.min-vh-100 {
+    min-height: 100vh;
+}
+
+.auth-card {
+    border: none; /* Remove default card border */
+    border-radius: .75rem; /* Softer corners */
+}
+
+.monstro-auth-brand {
+    color: var(--monstro-royal-blue, royalblue); /* Use accent color */
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+.monstro-auth-brand i {
+    vertical-align: -0.1em;
+}
+
+.auth-card .form-label {
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+/* Style primary button with accent color */
+.auth-card .btn-primary {
+    background-color: var(--monstro-royal-blue, royalblue);
+    border-color: var(--monstro-royal-blue, royalblue);
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-weight: 600;
+}
+
+.auth-card .btn-primary:hover {
+    background-color: #3457b1; /* Darker royal blue */
+    border-color: #3457b1;
+}
+
+.auth-card a {
+     color: var(--monstro-royal-blue, royalblue);
+}
+.auth-card a:hover {
+     color: #3457b1;
+}
+
+/* Style the account type selection box */
+.account-type-selection {
+    background-color: #f8f9fa; /* Light background inside */
+    border-color: #dee2e6 !important; /* Ensure border is visible */
+}
+.account-type-selection .form-check-label {
+    cursor: pointer;
+}
+.account-type-selection .form-check-input:checked + .form-check-label {
+    font-weight: 600;
+    color: var(--monstro-royal-blue, royalblue);
+}
+/* Custom validation message positioning for radios if needed */
+.account-type-selection .invalid-feedback {
+     margin-top: .5rem;
+}

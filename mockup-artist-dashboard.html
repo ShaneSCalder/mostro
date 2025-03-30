@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mostro - Artist Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/monstro-dashboard.css" />
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-light border-bottom sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+          <i class="bi bi-music-note-beamed me-2"></i>Mostro Artist Dashboard
+      </a>
+      <button class="navbar-toggler d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+             <a class="nav-link" href="monstro-streaming.html"><i class="bi bi-binoculars me-1"></i>Browse Streaming</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-person-circle me-1"></i> Account
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#">Profile Settings</a></li>
+              <li><a class="dropdown-item" href="#">Wallet Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="mockup-login.html">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-lg-2 p-0 bg-light border-end sidebar-sticky">
+          <div class="offcanvas-md offcanvas-start bg-light" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="sidebarMenuLabel">Artist Menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body d-md-flex flex-column pt-lg-3">
+              <ul class="nav flex-column nav-pills flex-grow-1">
+                <li class="nav-item">
+                  <a class="nav-link active" id="nav-streaming-tab" data-bs-toggle="tab" href="#streaming" role="tab" aria-controls="streaming" aria-selected="true">
+                    <i class="bi bi-soundwave me-2"></i> Streaming
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="nav-marketplace-tab" data-bs-toggle="tab" href="#marketplace" role="tab" aria-controls="marketplace" aria-selected="false">
+                    <i class="bi bi-shop me-2"></i> Marketplace
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="nav-artist-tab" data-bs-toggle="tab" href="#artist" role="tab" aria-controls="artist" aria-selected="false">
+                    <i class="bi bi-person-badge me-2"></i> Artist Tools
+                  </a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" id="nav-analytics-tab" data-bs-toggle="tab" href="#analytics" role="tab" aria-controls="analytics" aria-selected="false">
+                    <i class="bi bi-graph-up me-2"></i> Analytics
+                  </a>
+                </li>
+              </ul>
+              <hr class="d-md-none">
+              <div class="mt-auto p-3 small text-muted d-none d-md-block">
+                   &copy; 2025 Mostro
+               </div>
+            </div>
+          </div>
+      </div>
+
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
+          <div class="row mb-4" id="top-cards-row">
+              <div class="col-lg-3 col-md-6 mb-3">
+                <div class="card h-100 shadow-sm top-card">
+                   <div class="card-body text-center">
+                    <h5 class="card-title"><i class="bi bi-soundwave me-1"></i>Streaming</h5>
+                    <p class="card-text small text-muted">Manage songs & albums.</p>
+                    <a href="#streaming" class="btn btn-sm btn-outline-primary stretched-link top-card-link">Go to Section</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 mb-3">
+                <div class="card h-100 shadow-sm top-card">
+                  <div class="card-body text-center">
+                    <h5 class="card-title"><i class="bi bi-shop me-1"></i>Marketplace</h5>
+                    <p class="card-text small text-muted">Create & manage NFTs.</p>
+                    <a href="#marketplace" class="btn btn-sm btn-outline-primary stretched-link top-card-link">Go to Section</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 mb-3">
+                 <div class="card h-100 shadow-sm top-card">
+                  <div class="card-body text-center">
+                    <h5 class="card-title"><i class="bi bi-person-badge me-1"></i>Artist Tools</h5>
+                    <p class="card-text small text-muted">Profile & Wallet.</p>
+                    <a href="#artist" class="btn btn-sm btn-outline-primary stretched-link top-card-link">Go to Section</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 mb-3">
+                 <div class="card h-100 shadow-sm top-card">
+                  <div class="card-body text-center">
+                    <h5 class="card-title"><i class="bi bi-graph-up me-1"></i>Analytics</h5>
+                    <p class="card-text small text-muted">View performance data.</p>
+                    <a href="#analytics" class="btn btn-sm btn-outline-primary stretched-link top-card-link">Go to Section</a>
+                  </div>
+                </div>
+              </div>
+          </div><div class="tab-content" id="mainTabContent">
+
+            <div class="tab-pane fade show active" id="streaming" role="tabpanel" aria-labelledby="nav-streaming-tab">
+              <div class="card shadow-sm">
+                <div class="card-header bg-white">
+                    <h2 class="h4 mb-0">Manage Streaming Content</h2>
+                </div>
+                <div class="card-body">
+                  <ul class="nav nav-tabs mb-3" id="streamingTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="streaming-songs-tab" data-bs-toggle="tab" data-bs-target="#streaming-songs" type="button" role="tab" aria-controls="streaming-songs" aria-selected="true">
+                        Songs
+                      </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="streaming-albums-tab" data-bs-toggle="tab" data-bs-target="#streaming-albums" type="button" role="tab" aria-controls="streaming-albums" aria-selected="false">
+                        Albums
+                      </button>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="streamingTabContent">
+                    <div class="tab-pane fade show active" id="streaming-songs" role="tabpanel" aria-labelledby="streaming-songs-tab">
+                      <h4>Add/Edit Song</h4>
+                      <form class="mt-3 needs-validation" novalidate>
+                        <div class="row">
+                          <div class="col-md-6 mb-3">
+                            <label for="songTitle" class="form-label">Title</label>
+                            <input type="text" class="form-control form-control-sm" id="songTitle" placeholder="Enter song title" required>
+                            <div class="invalid-feedback">Please provide a song title.</div>
+                          </div>
+                          <div class="col-md-6 mb-3">
+                            <label for="songArtist" class="form-label">Artist</label>
+                            <input type="text" class="form-control form-control-sm" id="songArtist" placeholder="Usually your name" required>
+                             <div class="invalid-feedback">Please provide the artist name.</div>
+                          </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 mb-3">
+                             <label for="songImage" class="form-label">Cover Image (Optional)</label>
+                             <input type="file" class="form-control form-control-sm" id="songImage" accept="image/*">
+                           </div>
+                           <div class="col-md-6 mb-3">
+                             <label for="genre" class="form-label">Genre</label>
+                             <input type="text" class="form-control form-control-sm" id="genre" placeholder="e.g., Rock, Pop, Jazz">
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 mb-3">
+                             <label for="previewSong" class="form-label">Preview Song (Optional)</label>
+                             <input type="file" class="form-control form-control-sm" id="previewSong" accept="audio/*">
+                             <small class="form-text text-muted">30-second preview recommended.</small>
+                           </div>
+                           <div class="col-md-6 mb-3">
+                             <label for="fullSong" class="form-label">Full Song (Required)</label>
+                             <input type="file" class="form-control form-control-sm" id="fullSong" accept="audio/*" required>
+                             <div class="invalid-feedback">Please upload the full song file.</div>
+                           </div>
+                        </div>
+                         <div class="row">
+                           <div class="col-md-6 mb-3">
+                            <label for="producers" class="form-label">Producers</label>
+                            <input type="text" class="form-control form-control-sm" id="producers" placeholder="Comma-separated names">
+                          </div>
+                          <div class="col-md-6 mb-3">
+                            <label for="writer" class="form-label">Writer(s)</label>
+                            <input type="text" class="form-control form-control-sm" id="writer" placeholder="Comma-separated names">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6 mb-3">
+                            <label for="publishers" class="form-label">Publishers</label>
+                            <input type="text" class="form-control form-control-sm" id="publishers" placeholder="Comma-separated names">
+                          </div>
+                          <div class="col-md-6 mb-3">
+                            <label for="mood" class="form-label">Mood</label>
+                            <input type="text" class="form-control form-control-sm" id="mood" placeholder="e.g., Happy, Energetic, Calm">
+                          </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-2">Submit Song</button>
+                      </form>
+                       <hr>
+                       <h5>Your Uploaded Songs</h5>
+                       <ul class="list-group list-group-flush">
+                           <li class="list-group-item d-flex justify-content-between align-items-center">Song 1 Title <button class="btn btn-sm btn-outline-secondary">Edit</button></li>
+                           <li class="list-group-item d-flex justify-content-between align-items-center">Another Song <button class="btn btn-sm btn-outline-secondary">Edit</button></li>
+                           </ul>
+                    </div>
+                    <div class="tab-pane fade" id="streaming-albums" role="tabpanel" aria-labelledby="streaming-albums-tab">
+                       <h4>Add/Edit Album</h4>
+                       <form class="mt-3 needs-validation" novalidate>
+                         <div class="row">
+                             <div class="col-md-6 mb-3">
+                                 <label for="albumTitle" class="form-label">Title</label>
+                                 <input type="text" class="form-control form-control-sm" id="albumTitle" placeholder="Enter album title" required>
+                                 <div class="invalid-feedback">Please provide an album title.</div>
+                              </div>
+                             <div class="col-md-6 mb-3">
+                                 <label for="albumArtist" class="form-label">Artist</label>
+                                 <input type="text" class="form-control form-control-sm" id="albumArtist" placeholder="Usually your name" required>
+                                  <div class="invalid-feedback">Please provide the artist name.</div>
+                            </div>
+                         </div>
+                         <div class="row">
+                             <div class="col-md-6 mb-3">
+                                 <label for="albumImage" class="form-label">Album Cover Image</label>
+                                 <input type="file" class="form-control form-control-sm" id="albumImage" accept="image/*">
+                             </div>
+                             <div class="col-md-6 mb-3">
+                                <label for="albumGenre" class="form-label">Genre</label>
+                                <input type="text" class="form-control form-control-sm" id="albumGenre" placeholder="e.g., Rock, Pop, Jazz">
+                             </div>
+                         </div>
+                         <div class="row">
+                            <div class="col-md-6 mb-3">
+                              <label for="albumProducers" class="form-label">Producers</label>
+                              <input type="text" class="form-control form-control-sm" id="albumProducers" placeholder="Comma-separated names">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                              <label for="albumWriter" class="form-label">Writer(s)</label>
+                              <input type="text" class="form-control form-control-sm" id="albumWriter" placeholder="Comma-separated names">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                              <label for="albumPublishers" class="form-label">Publishers</label>
+                              <input type="text" class="form-control form-control-sm" id="albumPublishers" placeholder="Comma-separated names">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                              <label for="albumMood" class="form-label">Overall Mood</label>
+                              <input type="text" class="form-control form-control-sm" id="albumMood" placeholder="e.g., Upbeat, Melancholic">
+                            </div>
+                       </div>
+                         <div class="mb-3">
+                           <label for="albumSongs" class="form-label">Select Songs for Album (Hold Ctrl/Cmd to select multiple)</label>
+                           <select class="form-select" id="albumSongs" multiple size="5" required>
+                             <option value="song1">Song 1 Title (Example)</option>
+                             <option value="song2">Another Song Title (Example)</option>
+                             <option value="song3">Example Track 3 (Example)</option>
+                             <option value="song4">Demo Song 4</option>
+                             <option value="song5">Track Five</option>
+                           </select>
+                            <div class="invalid-feedback">Please select at least one song for the album.</div>
+                         </div>
+                         <button type="submit" class="btn btn-primary mt-2">Submit Album</button>
+                       </form>
+                        <hr>
+                       <h5>Your Uploaded Albums</h5>
+                       <ul class="list-group list-group-flush">
+                           <li class="list-group-item d-flex justify-content-between align-items-center">Album Title 1 <button class="btn btn-sm btn-outline-secondary">Edit</button></li>
+                           <li class="list-group-item d-flex justify-content-between align-items-center">Best Of Collection <button class="btn btn-sm btn-outline-secondary">Edit</button></li>
+                           </ul>
+                    </div>
+                  </div> </div> </div> </div> <div class="tab-pane fade" id="marketplace" role="tabpanel" aria-labelledby="nav-marketplace-tab">
+               <div class="card shadow-sm">
+                  <div class="card-header bg-white">
+                      <h2 class="h4 mb-0">Manage Marketplace NFTs</h2>
+                  </div>
+                  <div class="card-body">
+                      <ul class="nav nav-tabs mb-3" id="marketplaceTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link active" id="songs-tab-mkt" data-bs-toggle="tab" data-bs-target="#marketplace-songs" type="button" role="tab" aria-controls="marketplace-songs" aria-selected="true">Create Song NFT</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="albums-tab-mkt" data-bs-toggle="tab" data-bs-target="#marketplace-albums" type="button" role="tab" aria-controls="marketplace-albums" aria-selected="false">Create Album NFT</button>
+                        </li>
+                      </ul>
+                      <div class="tab-content" id="marketplaceTabContent">
+                        <div class="tab-pane fade show active" id="marketplace-songs" role="tabpanel" aria-labelledby="songs-tab-mkt">
+                          <h4>Create NFT for a Song</h4>
+                          <p class="text-muted small">Select one of your uploaded songs and configure the details for its NFT release.</p>
+                          <form class="mt-3 needs-validation" novalidate>
+                              <div class="mb-3">
+                                  <label for="nftSongSelect" class="form-label">Select Song</label>
+                                  <select class="form-select form-select-sm" id="nftSongSelect" required>
+                                      <option value="" selected disabled>Choose available song...</option>
+                                      <option value="song1">Song 1 Title (Example)</option>
+                                      <option value="song2">Another Song Title (Example)</option>
+                                  </select>
+                                  <div class="invalid-feedback">Please select a song.</div>
+                              </div>
+                               <div class="row">
+                                  <div class="col-md-6 mb-3">
+                                      <label for="nftSongPrice" class="form-label">Price (Crypto)</label>
+                                      <div class="input-group input-group-sm">
+                                           <input type="number" class="form-control" id="nftSongPrice" placeholder="Enter price" required min="0" step="any">
+                                           <select class="form-select flex-grow-0" style="width: auto;" id="nftSongCurrency">
+                                                <option>XRP</option>
+                                                <option>SOL</option>
+                                                </select>
+                                            <div class="invalid-feedback">Please enter a valid price.</div>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6 mb-3">
+                                      <label for="nftSongQuantity" class="form-label">Quantity</label>
+                                      <input type="number" class="form-control form-control-sm" id="nftSongQuantity" placeholder="Number of editions" required min="1">
+                                      <div class="invalid-feedback">Please enter quantity (min 1).</div>
+                                  </div>
+                              </div>
+                               <div class="mb-3">
+                                  <label for="nftSongRoyalties" class="form-label">Resale Royalty (%)</label>
+                                  <input type="number" class="form-control form-control-sm" id="nftSongRoyalties" placeholder="e.g., 10" min="0" max="50">
+                                  <small class="form-text text-muted">Percentage you receive on secondary sales (0-50%).</small>
+                              </div>
+                              <button type="submit" class="btn btn-success mt-2">Create Song NFT</button>
+                          </form>
+                           <hr>
+                           <h5>Your Active Song NFTs</h5>
+                           <ul class="list-group list-group-flush">
+                               <li class="list-group-item d-flex justify-content-between align-items-center">NFT for Song 1 <span class="badge bg-info rounded-pill">50/100 Minted</span> <button class="btn btn-sm btn-outline-secondary">Manage</button></li>
+                               </ul>
+                        </div>
+                        <div class="tab-pane fade" id="marketplace-albums" role="tabpanel" aria-labelledby="albums-tab-mkt">
+                          <h4>Create NFT for an Album</h4>
+                          <p class="text-muted small">Select one of your uploaded albums and configure the details for its NFT release.</p>
+                          <form class="mt-3 needs-validation" novalidate>
+                              <div class="mb-3">
+                                  <label for="nftAlbumSelect" class="form-label">Select Album</label>
+                                  <select class="form-select form-select-sm" id="nftAlbumSelect" required>
+                                      <option value="" selected disabled>Choose available album...</option>
+                                       <option value="album1">Album Title 1 (Example)</option>
+                                      <option value="album2">Best Of Collection (Example)</option>
+                                  </select>
+                                  <div class="invalid-feedback">Please select an album.</div>
+                              </div>
+                               <div class="row">
+                                  <div class="col-md-6 mb-3">
+                                      <label for="nftAlbumPrice" class="form-label">Price (Crypto)</label>
+                                      <div class="input-group input-group-sm">
+                                          <input type="number" class="form-control" id="nftAlbumPrice" placeholder="Enter price" required min="0" step="any">
+                                           <select class="form-select flex-grow-0" style="width: auto;" id="nftAlbumCurrency">
+                                                <option>XRP</option>
+                                                <option>SOL</option>
+                                           </select>
+                                            <div class="invalid-feedback">Please enter a valid price.</div>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6 mb-3">
+                                      <label for="nftAlbumQuantity" class="form-label">Quantity</label>
+                                      <input type="number" class="form-control form-control-sm" id="nftAlbumQuantity" placeholder="Number of editions" required min="1">
+                                      <div class="invalid-feedback">Please enter quantity (min 1).</div>
+                                  </div>
+                              </div>
+                               <div class="mb-3">
+                                  <label for="nftAlbumRoyalties" class="form-label">Resale Royalty (%)</label>
+                                  <input type="number" class="form-control form-control-sm" id="nftAlbumRoyalties" placeholder="e.g., 5" min="0" max="50">
+                                  <small class="form-text text-muted">Percentage you receive on secondary sales (0-50%).</small>
+                              </div>
+                              <button type="submit" class="btn btn-success mt-2">Create Album NFT</button>
+                          </form>
+                            <hr>
+                           <h5>Your Active Album NFTs</h5>
+                           <ul class="list-group list-group-flush">
+                               <li class="list-group-item d-flex justify-content-between align-items-center">NFT for Album 1 <span class="badge bg-warning rounded-pill">10/10 Minted</span> <button class="btn btn-sm btn-outline-secondary">Manage</button></li>
+                               </ul>
+                        </div>
+                      </div> </div> </div> </div> <div class="tab-pane fade" id="artist" role="tabpanel" aria-labelledby="nav-artist-tab">
+              <div class="card shadow-sm">
+                <div class="card-header bg-white">
+                    <h2 class="h4 mb-0">Artist Tools</h2>
+                </div>
+                <div class="card-body">
+                    <ul class="nav nav-tabs mb-3" id="artistToolsTab" role="tablist">
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="profile-tab-art" data-bs-toggle="tab" data-bs-target="#artist-profile" type="button" role="tab" aria-controls="profile" aria-selected="true"><i class="bi bi-person-lines-fill me-1"></i> Profile</button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="wallet-tab-art" data-bs-toggle="tab" data-bs-target="#artist-wallet" type="button" role="tab" aria-controls="wallet" aria-selected="false"><i class="bi bi-wallet2 me-1"></i> Wallet</button>
+                      </li>
+                       <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="page-edit-tab-art" data-bs-toggle="tab" data-bs-target="#artist-page-edit" type="button" role="tab" aria-controls="page-edit" aria-selected="false"><i class="bi bi-pencil-square me-1"></i> Edit Public Page</button>
+                      </li>
+                    </ul>
+                    <div class="tab-content" id="artistToolsTabContent">
+                      <div class="tab-pane fade show active" id="artist-profile" role="tabpanel" aria-labelledby="profile-tab-art">
+                        <h4>Edit Artist Profile</h4>
+                        <form class="mt-3 needs-validation" novalidate>
+                            <div class="mb-3">
+                                <label for="artistName" class="form-label">Artist/Band Name</label>
+                                <input type="text" class="form-control form-control-sm" id="artistName" value="Your Artist Name" required>
+                                <div class="invalid-feedback">Please enter your artist name.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="artistBio" class="form-label">Bio</label>
+                                <textarea class="form-control form-control-sm" id="artistBio" rows="4" placeholder="Tell your fans about yourself..."></textarea>
+                            </div>
+                             <div class="mb-3">
+                                <label for="artistProfileImage" class="form-label">Profile Picture</label>
+                                <input type="file" class="form-control form-control-sm" id="artistProfileImage" accept="image/*">
+                                <small class="form-text text-muted">Recommended: Square image, at least 400x400px.</small>
+                            </div>
+                             <div class="mb-3">
+                                <label for="artistBannerImage" class="form-label">Profile Banner Image</label>
+                                <input type="file" class="form-control form-control-sm" id="artistBannerImage" accept="image/*">
+                                 <small class="form-text text-muted">Recommended: Wide image, approx 1500x500px.</small>
+                            </div>
+                             <button type="submit" class="btn btn-primary mt-2">Save Profile</button>
+                         </form>
+                      </div>
+                      <div class="tab-pane fade" id="artist-wallet" role="tabpanel" aria-labelledby="wallet-tab-art">
+                        <h4>Wallet Management</h4>
+                        <p class="text-muted small">Connect and manage your wallets for receiving payments and royalties from NFT sales.</p>
+                         <div class="list-group mt-3">
+                             <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                 <div>
+                                     <h6 class="mb-1"><i class="bi bi-currency-bitcoin me-2"></i>XRP Wallet (XUMM Example)</h6>
+                                     <small class="text-muted">Status: Not Connected</small>
+                                 </div>
+                                 <button class="btn btn-outline-success btn-sm">Connect Wallet</button>
+                             </div>
+                             <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                 <div>
+                                     <h6 class="mb-1"><i class="bi bi-brightness-high me-2"></i>Solana Wallet (Phantom Example)</h6>
+                                     <small class="text-success">Connected: <span class="font-monospace">solana-addr...xyz</span></small>
+                                 </div>
+                                 <button class="btn btn-outline-danger btn-sm">Disconnect</button>
+                             </div>
+                             </div>
+                         <div class="alert alert-warning mt-4 small" role="alert">
+                          <i class="bi bi-exclamation-triangle-fill me-1"></i> Ensure you connect the correct wallet address. Payouts will be sent here. Monstro is not responsible for funds sent to incorrect addresses.
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="artist-page-edit" role="tabpanel" aria-labelledby="page-edit-tab-art">
+                           <h4>Edit Public Artist Page Feed</h4>
+                           <p class="text-muted small">Create posts that appear on your public artist page feed.</p>
+                           <form class="mt-3 needs-validation" novalidate>
+                               <div class="mb-3">
+                                   <label for="postText" class="form-label">New Post Content</label>
+                                   <textarea class="form-control form-control-sm" id="postText" rows="4" placeholder="Share an update with your fans..." required></textarea>
+                                    <div class="invalid-feedback">Post content cannot be empty.</div>
+                               </div>
+                                <div class="mb-3">
+                                   <label for="postImage" class="form-label">Attach Image/Video (Optional)</label>
+                                   <input type="file" class="form-control form-control-sm" id="postImage" accept="image/*,video/*">
+                               </div>
+                                <div class="mb-3">
+                                    <label for="postLinkSong" class="form-label">Link to Song/Album (Optional)</label>
+                                     <select class="form-select form-select-sm" id="postLinkSong">
+                                        <option selected>None</option>
+                                        <option value="song1">Song 1 Title (Example)</option>
+                                        <option value="album1">Album Title 1 (Example)</option>
+                                        </select>
+                                </div>
+                               <button type="submit" class="btn btn-info mt-2 text-white">Create Post</button>
+                           </form>
+                           <hr>
+                           <h5>Your Recent Posts</h5>
+                            <ul class="list-group list-group-flush">
+                               <li class="list-group-item d-flex justify-content-between align-items-center">"Check out the new single..." <small class="text-muted">2h ago</small> <button class="btn btn-sm btn-outline-danger">Delete</button></li>
+                               <li class="list-group-item d-flex justify-content-between align-items-center">"Studio vibes today!..." <small class="text-muted">1d ago</small> <button class="btn btn-sm btn-outline-danger">Delete</button></li>
+                               </ul>
+                       </div>
+                    </div></div></div></div> <div class="tab-pane fade" id="analytics" role="tabpanel" aria-labelledby="nav-analytics-tab">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-white">
+                         <h2 class="h4 mb-0">Analytics Dashboard</h2>
+                    </div>
+                    <div class="card-body">
+                        <p class="text-muted small">View your streaming revenue, NFT sales, listener demographics, etc.</p>
+                        <div class="row mt-3 gy-3">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="card text-center border-primary h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-primary"><i class="bi bi-play-circle me-1"></i> Total Streams (Month)</h5>
+                                        <p class="card-text display-6 fw-bold">34,567</p>
+                                    </div>
+                                     <div class="card-footer text-muted small">
+                                        +5.2% vs last month
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="card text-center border-success h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-success"><i class="bi bi-cash-coin me-1"></i> Estimated Revenue (Month)</h5>
+                                        <p class="card-text display-6 fw-bold">$987.65</p>
+                                    </div>
+                                    <div class="card-footer text-muted small">
+                                        Based on estimated payouts
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="col-lg-4 col-md-6">
+                                <div class="card text-center border-info h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-info"><i class="bi bi-people me-1"></i> Unique Listeners (Month)</h5>
+                                        <p class="card-text display-6 fw-bold">8,123</p>
+                                    </div>
+                                     <div class="card-footer text-muted small">
+                                        Across all platforms
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="col-12 mt-4">
+                                 <div class="card">
+                                     <div class="card-body">
+                                         <h5 class="card-title">Streams Over Time</h5>
+                                         <canvas id="streamsChartPlaceholder" height="150"></canvas>
+                                         <p class="text-center text-muted small mt-2">(Chart placeholder - Requires Chart.js integration)</p>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="col-md-6 mt-4">
+                                 <div class="card">
+                                     <div class="card-body">
+                                         <h5 class="card-title">Top Songs (Month)</h5>
+                                         <ul class="list-group list-group-flush">
+                                             <li class="list-group-item">Song 1 Title (10,500 streams)</li>
+                                             <li class="list-group-item">Another Song (8,200 streams)</li>
+                                             <li class="list-group-item">Example Track 3 (5,100 streams)</li>
+                                         </ul>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="col-md-6 mt-4">
+                                 <div class="card">
+                                     <div class="card-body">
+                                         <h5 class="card-title">Listener Demographics</h5>
+                                          <canvas id="demographicsChartPlaceholder" height="150"></canvas>
+                                          <p class="text-center text-muted small mt-2">(Chart placeholder - Requires Chart.js integration)</p>
+                                     </div>
+                                 </div>
+                             </div>
+                        </div> <div class="alert alert-info mt-4 small" role="alert">
+                          <i class="bi bi-info-circle-fill me-1"></i> Analytics data updates daily. Revenue estimates may vary from final payouts.
+                        </div>
+                    </div> </div> </div> </div> </main>
+    </div> </div> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="js/monstro-dashboard.js"></script>
+  </body>
+</html>

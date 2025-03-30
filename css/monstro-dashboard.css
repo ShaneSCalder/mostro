@@ -1,0 +1,259 @@
+/* ============================ */
+/* Monstro Dashboard Styles     */
+/* css/monstro-dashboard.css    */
+/* ============================ */
+
+:root {
+    /* Define Accent Color - Choose a Monstro brand color */
+    --monstro-primary-accent: #6a11cb; /* Example Purple - CHANGE THIS */
+    --monstro-secondary-accent: #2575fc; /* Example Blue */
+    --monstro-success: #198754;
+    --monstro-info: #0dcaf0;
+    --monstro-warning: #ffc107;
+  }
+  
+  body {
+    background-color: #f8f9fa; /* Light grey page background */
+    color: #212529;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .container-fluid {
+     flex-grow: 1; /* Makes main content area fill space */
+     display: flex; /* Use flex for row behavior */
+     padding-left: 0; /* Remove default padding */
+     padding-right: 0;
+  }
+  
+  .row {
+      width: 100%; /* Ensure row takes full width */
+      margin-left: 0;
+      margin-right: 0;
+  }
+  
+  /* --- Top Navbar --- */
+  .navbar {
+      z-index: 1030; /* Ensure navbar stays above sidebar potentially */
+  }
+  .navbar-brand {
+      font-weight: 600;
+      color: var(--monstro-primary-accent) !important; /* Use !important carefully if needed */
+  }
+  
+  /* --- Sidebar --- */
+  /* Ensure sidebar takes full height and sticks */
+  .sidebar-sticky {
+      position: sticky;
+      top: 56px; /* Height of navbar - Adjust if navbar height changes */
+      height: calc(100vh - 56px); /* Full height minus navbar */
+      overflow-y: auto; /* Enable scrolling if content overflows */
+      /* Default padding removed by p-0 on element */
+  }
+  
+  /* Offcanvas specific styles for mobile */
+  @media (max-width: 767.98px) {
+      .sidebar-sticky {
+         position: static; /* Unstick sidebar */
+         height: auto;
+         max-height: none;
+         overflow-y: visible;
+      }
+       #sidebarMenu.offcanvas-start {
+          width: 280px; /* Width of offcanvas */
+      }
+       main {
+           margin-left: 0 !important; /* Ensure main content uses full width */
+       }
+  }
+  
+  
+  /* Sidebar Links */
+  #sidebarMenu .nav-link {
+    font-weight: 500;
+    color: #495057; /* Darker grey links */
+    padding: .75rem 1.25rem; /* Adjust padding */
+    border-radius: .375rem;
+    margin-bottom: .25rem;
+    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+  }
+  
+  #sidebarMenu .nav-link .bi {
+    width: 1.1em; /* Slightly larger icons */
+    height: 1.1em;
+    vertical-align: -0.15em; /* Better alignment */
+    margin-right: 10px;
+    color: #6c757d; /* Muted icon color */
+    transition: color 0.15s ease-in-out;
+  }
+  
+  #sidebarMenu .nav-link:hover,
+  #sidebarMenu .nav-link:focus {
+    color: var(--monstro-primary-accent);
+    background-color: rgba(106, 17, 203, 0.08); /* Lighter accent bg */
+  }
+  #sidebarMenu .nav-link:hover .bi,
+  #sidebarMenu .nav-link:focus .bi {
+     color: var(--monstro-primary-accent);
+  }
+  
+  
+  /* Active Sidebar Link */
+  #sidebarMenu .nav-link.active {
+    color: #fff;
+    background-color: var(--monstro-primary-accent);
+  }
+  #sidebarMenu .nav-link.active .bi {
+     color: #fff; /* White icon on active */
+  }
+  
+  /* Sidebar Footer */
+  #sidebarMenu .small.text-muted {
+      color: #6c757d !important; /* Ensure muted color */
+  }
+  
+  
+  /* --- Main Content Area --- */
+  main {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    background-color: #ffffff; /* White background for content */
+    flex-grow: 1; /* Allow main to grow */
+  }
+  
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    color: #212529; /* Dark headings */
+  }
+  
+  
+  /* --- Top Cards Section --- */
+  .top-card {
+    border: none; /* Remove default border */
+    border-left: 4px solid var(--monstro-primary-accent); /* Accent border on left */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  .top-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  }
+  .top-card .card-title {
+      color: var(--monstro-primary-accent);
+      font-weight: 600;
+  }
+  .top-card .card-text {
+      color: #6c757d;
+  }
+  .top-card .btn-outline-primary {
+      border-color: var(--monstro-primary-accent);
+      color: var(--monstro-primary-accent);
+      font-weight: 500;
+      padding: .25rem .75rem; /* Adjust button padding */
+  }
+  .top-card .btn-outline-primary:hover {
+      background-color: var(--monstro-primary-accent);
+      color: white;
+  }
+  
+  /* --- Main Tab Content Styling --- */
+  .tab-content {
+    margin-top: 1.5rem; /* Space below top cards */
+  }
+  
+  /* Cards within Tab Panes */
+  .tab-pane > .card {
+      border: 1px solid #dee2e6; /* Standard card border */
+  }
+  .tab-pane > .card > .card-header {
+      background-color: #f8f9fa; /* Light header */
+      border-bottom: 1px solid #dee2e6;
+  }
+  .tab-pane > .card > .card-header h2,
+  .tab-pane > .card > .card-header h4 {
+      margin-bottom: 0; /* Remove margin from header text */
+      font-size: 1.25rem; /* Consistent header size */
+       color: #495057;
+  }
+  
+  
+  /* Inner Tabs (e.g., Songs/Albums) */
+  .tab-pane .nav-tabs {
+    border-bottom-color: #dee2e6;
+  }
+  .tab-pane .nav-tabs .nav-link {
+    color: #6c757d; /* Muted inactive tabs */
+    border-radius: .375rem .375rem 0 0; /* Rounded top corners */
+  }
+  
+  .tab-pane .nav-tabs .nav-link.active {
+    color: var(--monstro-primary-accent);
+    border-color: #dee2e6 #dee2e6 #fff; /* Standard active tab border */
+    font-weight: 600;
+    background-color: #fff; /* Ensure active tab bg matches card body */
+  }
+  
+  /* Forms */
+  .tab-pane form .form-label {
+    font-size: 0.875em; /* Slightly smaller labels */
+    font-weight: 500;
+    color: #495057;
+  }
+  /* Use smaller form controls in dashboard */
+  .tab-pane form .form-control-sm,
+  .tab-pane form .form-select-sm {
+    font-size: 0.875rem;
+  }
+  .tab-pane form .form-text {
+      color: #6c757d !important;
+      font-size: 0.8em;
+  }
+  .tab-pane form .btn {
+      font-size: 0.9em; /* Slightly smaller buttons */
+  }
+  
+  /* Make primary/success buttons use accent colors */
+  .tab-pane form .btn-primary {
+      background-color: var(--monstro-primary-accent);
+      border-color: var(--monstro-primary-accent);
+  }
+  .tab-pane form .btn-primary:hover {
+      background-color: #530caA; /* Darker accent */
+      border-color: #530caA;
+  }
+  .tab-pane form .btn-success {
+      background-color: var(--monstro-success);
+       border-color: var(--monstro-success);
+  }
+  .tab-pane form .btn-success:hover {
+       background-color: #157347;
+       border-color: #146c43;
+  }
+  
+  /* Specific Sections (e.g., Analytics Cards) */
+  #analytics .card {
+      border-width: 1px; /* Ensure border */
+  }
+  #analytics .display-6 {
+      font-size: 2rem; /* Adjust stat size */
+  }
+  #analytics .card-footer {
+      background-color: #f8f9fa; /* Light footer */
+  }
+  
+  /* Wallet List Group */
+  #artist-wallet .list-group-item h6 {
+      color: #343a40;
+  }
+  #artist-wallet .list-group-item .bi {
+      color: #6c757d;
+  }
+  
+  
+  /* Horizontal Rule */
+  hr {
+      border-top: 1px solid #dee2e6;
+      opacity: 1;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+  }

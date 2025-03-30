@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostro - Gamification Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/mockup-style.css">
+    <link rel="stylesheet" href="css/mockup-gamification.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand monstro-brand-light" href="mockup-fan-dashboard.html"> <i class="bi bi-headphones me-2"></i>Mostro </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavFan" aria-controls="navbarNavFan" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+            <div class="collapse navbar-collapse" id="navbarNavFan">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item"><a class="nav-link" href="mockup-fan-dashboard.html">Dashboard</a></li>
+                     <li class="nav-item"><a class="nav-link" href="monstro-streaming.html"><i class="bi bi-binoculars me-1"></i>Browse</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="mockup-gamification.html"><i class="bi bi-joystick me-1"></i>Gamification</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mockup-rewards.html"><i class="bi bi-gift me-1"></i>Rewards Hub</a></li>
+                     <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-collection-play me-1"></i>My Library</a></li>
+                </ul>
+                <ul class="navbar-nav ms-auto"> <form class="d-flex me-lg-3 mb-2 mb-lg-0" role="search"><input class="form-control form-control-sm" type="search" placeholder="Search Music..." aria-label="Search"><button class="btn btn-sm btn-outline-info" type="submit"><i class="bi bi-search"></i></button></form>
+                    <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="https://picsum.photos/seed/useravatar/30" alt="User Avatar" class="rounded-circle me-1" width="30" height="30"> YourUsername</a>
+                        <ul class="dropdown-menu dropdown-menu-end"><li><a class="dropdown-item" href="mockup-profile-settings.html">Settings</a></li><li><hr class="dropdown-divider"></li><li><a class="dropdown-item" href="mockup-login.html">Logout</a></li></ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="gamification-page">
+        <header class="hub-header">
+            <h1>Your Gamification Hub</h1>
+            <p class="lead fs-6 opacity-75">Complete tasks, earn tokens, unlock trophies!</p>
+        </header>
+
+        <main class="hub-content container pb-extra">
+             <div class="row mb-4 gy-3">
+                 <div class="col-lg-5">
+                    <section class="user-profile-summary h-100 d-flex align-items-center">
+                         <img src="https://picsum.photos/seed/useravatar/80" alt="Your Avatar" class="user-avatar">
+                         <div class="user-details"> <h2 class="user-name h4">YourUsername</h2> <p class="user-level mb-0">Level 5 Fan</p> </div>
+                    </section>
+                 </div>
+                  <div class="col-lg-7">
+                    <section class="token-balance h-100 d-flex flex-column justify-content-center">
+                         <h3 class="h6">Your Balance</h3>
+                         <p class="mb-0"><span class="token-icon">🎵</span> <span class="token-amount" id="token-balance-amount">1250</span> TT</p>
+                         <a href="mockup-tt-engagement.html" class="btn btn-sm btn-link token-learn-more mt-1">Learn more & earn</a>
+                    </section>
+                 </div>
+             </div>
+
+            <section class="tasks-section mb-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                     <h3 class="section-title-gamification mb-0"><i class="fas fa-tasks me-2"></i>Available Tasks</h3>
+                     <small class="text-muted fst-italic">Click a task for details!</small>
+                </div>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-4" id="task-grid">
+
+                    <div class="col">
+                        <div class="task-card h-100"
+                             data-bs-toggle="modal" data-bs-target="#taskDetailModal"
+                             data-title="Discover New Music" data-icon-class="fas fa-headphones-alt"
+                             data-description="Listen to 5 tracks from your 'Recommended for You' playlist. Great way to find your next favorite!"
+                             data-progress="60" data-reward-amount="10" data-reward-text="+10 TT"
+                             data-go-link="#" data-go-text="Go To Recommendations">
+                             <div class="task-card-visible">
+                                 <h4><i class="fas fa-headphones-alt"></i> Discover New Music</h4>
+                                 <span class="task-reward-badge"><span class="token-icon-small">🎵</span> +10 TT</span>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="task-card h-100"
+                            data-bs-toggle="modal" data-bs-target="#taskDetailModal"
+                            data-title="Engage with Artists" data-icon-class="fas fa-comments"
+                            data-description="Leave a thoughtful comment on any post on an Artist's public page. Show your support!"
+                            data-progress="-1"
+                            data-reward-amount="2" data-reward-text="+2 TT (Daily)"
+                            data-go-link="#" data-go-text="Find Artists">
+                            <div class="task-card-visible">
+                                <h4><i class="fas fa-comments"></i> Engage with Artists</h4>
+                                <span class="task-reward-badge"><span class="token-icon-small">🎵</span> +2 TT <small>(Daily)</small></span>
+                            </div>
+                        </div>
+                   </div>
+                   <div class="col">
+                        <div class="task-card h-100"
+                            data-bs-toggle="modal" data-bs-target="#taskDetailModal"
+                            data-title="Daily Listening" data-icon-class="fas fa-clock"
+                            data-description="Keep the music flowing! Listen for 30 minutes or more without long pauses in a single session today."
+                            data-progress="80" data-reward-amount="5" data-reward-text="+5 TT"
+                            data-go-link="" data-go-text="">
+                            <div class="task-card-visible">
+                                <h4><i class="fas fa-clock"></i> Daily Listening</h4>
+                                <span class="task-reward-badge"><span class="token-icon-small">🎵</span> +5 TT</span>
+                            </div>
+                        </div>
+                   </div>
+                   <div class="col">
+                        <div class="task-card h-100"
+                            data-bs-toggle="modal" data-bs-target="#taskDetailModal"
+                            data-title="NFT Mint Challenge" data-icon-class="fas fa-gem"
+                            data-description="Complete 10 'Discovery' type tasks (like finding new artists or listening to recommended tracks) to earn an exclusive NFT Mint Pass! You can redeem the pass on the Rewards Hub."
+                            data-progress="70"
+                            data-reward-amount="0" data-reward-text="🏆 NFT Mint Pass"
+                            data-go-link="mockup-rewards.html" data-go-text="Check Rewards Hub"> <div class="task-card-visible">
+                                <h4><i class="fas fa-gem"></i> NFT Mint Challenge</h4>
+                                <span class="task-reward-badge">🏆 NFT Mint Pass</span>
+                            </div>
+                        </div>
+                   </div>
+                </div>
+            </section>
+
+            <section class="achievements-section mb-5">
+                <h3 class="section-title-gamification"><i class="fas fa-trophy me-2"></i>Your Trophies</h3>
+                 <small class="d-block text-muted mb-3 fst-italic">Click a trophy for details!</small>
+                <div class="achievements-grid">
+                    <div class="trophy-item earned"
+                         data-bs-toggle="modal" data-bs-target="#trophyDetailModal"
+                         data-trophy-name="Profile Pro" data-icon-class="fas fa-id-badge fa-2x"
+                         data-description="You completed your fan profile!" data-earned-status="true" data-earned-date="Mar 15, 2025">
+                         <i class="fas fa-id-badge fa-2x"></i> <span>Profile Pro</span>
+                    </div>
+                    <div class="trophy-item earned"
+                         data-bs-toggle="modal" data-bs-target="#trophyDetailModal"
+                         data-trophy-name="Streak Master" data-icon-class="fas fa-calendar-check fa-2x"
+                         data-description="Listened every day for 7 days straight!" data-earned-status="true" data-earned-date="Mar 28, 2025">
+                         <i class="fas fa-calendar-check fa-2x"></i> <span>Streak Master</span>
+                    </div>
+                    <div class="trophy-item"
+                         data-bs-toggle="modal" data-bs-target="#trophyDetailModal"
+                         data-trophy-name="Genre Explorer" data-icon-class="fas fa-compass fa-2x"
+                         data-description="Listened to at least 50 tracks across 5 different main genres." data-earned-status="false">
+                         <i class="fas fa-compass fa-2x"></i> <span>Genre Explorer</span>
+                    </div>
+                    <div class="trophy-item"
+                         data-bs-toggle="modal" data-bs-target="#trophyDetailModal"
+                         data-trophy-name="Playlist Pro" data-icon-class="bi bi-music-note-list fs-2"
+                         data-description="Created a playlist that gained 10 or more followers." data-earned-status="false">
+                         <i class="bi bi-music-note-list fs-2"></i> <span>Playlist Pro</span>
+                    </div>
+                    <div class="trophy-item"
+                         data-bs-toggle="modal" data-bs-target="#trophyDetailModal"
+                         data-trophy-name="Century Listener" data-icon-class="fas fa-headphones fa-2x"
+                         data-description="Reached 100 hours of total listening time on Monstro." data-earned-status="false">
+                         <i class="fas fa-headphones fa-2x"></i> <span>Century Listener</span>
+                    </div>
+                    <div class="trophy-item"
+                         data-bs-toggle="modal" data-bs-target="#trophyDetailModal"
+                         data-trophy-name="Early Adopter" data-icon-class="fas fa-seedling fa-2x"
+                         data-description="Listened to [Emerging Artist Name] before they hit 10k listeners." data-earned-status="false">
+                         <i class="fas fa-seedling fa-2x"></i> <span>Early Adopter</span>
+                    </div>
+                    <div class="trophy-item"
+                         data-bs-toggle="modal" data-bs-target="#trophyDetailModal"
+                         data-trophy-name="Supporter" data-icon-class="fas fa-heart fa-2x"
+                         data-description="Showed support by visiting 10 different Artist Merch pages via Monstro." data-earned-status="false">
+                         <i class="fas fa-heart fa-2x"></i> <span>Supporter</span>
+                    </div>
+                    <div class="trophy-item"
+                         data-bs-toggle="modal" data-bs-target="#trophyDetailModal"
+                         data-trophy-name="NFT Mint Pass" data-icon-class="fas fa-ticket-alt fa-2x"
+                         data-description="Complete 10 'Discovery' type tasks to earn! Redeemable on the Rewards Hub." data-earned-status="false">
+                         <i class="fas fa-ticket-alt fa-2x"></i> <span>NFT Mint Pass</span>
+                    </div>
+                </div>
+            </section>
+
+        </main> <div class="modal fade" id="taskDetailModal" tabindex="-1" aria-labelledby="taskDetailModalLabel" aria-hidden="true"> <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"> <div class="modal-content"> <div class="modal-header"> <h5 class="modal-title" id="taskDetailModalLabel"><i class="fas fa-tasks me-2"></i> Task Details</h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> </div> <div class="modal-body"> <h4 id="modalTaskTitle" class="mb-3 h5"><i class="fas fa-question-circle me-2"></i><span>Task Title</span></h4> <p id="modalTaskDescription" class="text-muted">Task description goes here...</p> <div id="modalTaskProgressContainer" class="mb-3" style="display: none;"> <label class="form-label small fw-bold text-muted text-uppercase">Progress:</label> <div class="progress" role="progressbar" aria-label="Task progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="height: 14px;"> <div class="progress-bar modal-progress-bar progress-bar-striped progress-bar-animated" style="width: 0%; font-size: 0.75rem;"></div> </div> </div> <div class="alert alert-success d-flex align-items-center mt-3" role="alert"> <i class="fas fa-coins me-2 fs-5"></i> <div> <strong>Reward:</strong> <span id="modalTaskReward"></span> </div> </div> <p class="text-center text-muted fst-italic mt-3" id="modalEncouragement">Keep up the great work!</p> </div> <div class="modal-footer justify-content-between"> <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button> <a href="#" id="modalTaskGoButton" class="btn btn-primary btn-sm" style="display: none;">Go To Task</a> </div> </div> </div> </div>
+        <div class="modal fade" id="trophyDetailModal" tabindex="-1" aria-labelledby="trophyDetailModalLabel" aria-hidden="true"> <div class="modal-dialog modal-dialog-centered"> <div class="modal-content"> <div class="modal-header"> <h5 class="modal-title" id="trophyDetailModalLabel">Trophy Details</h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> </div> <div class="modal-body text-center"> <div id="modalTrophyIconContainer" class="mb-3"> <i id="modalTrophyIcon" class="fas fa-question-circle fa-4x text-muted"></i> </div> <h4 id="modalTrophyName" class="mb-2">Trophy Name</h4> <p id="modalTrophyDescription" class="text-muted mb-3">How to earn this trophy.</p> <div id="modalTrophyStatus" class="small"> <span class="badge bg-secondary">Not Yet Earned</span> </div> </div> <div class="modal-footer"> <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button> </div> </div> </div> </div>
+        <footer class="player-bar-mockup fixed-bottom bg-dark text-light p-2 d-flex align-items-center justify-content-between"> <div class="d-flex align-items-center"> <img src="https://picsum.photos/seed/nowplaying/50" alt="Now Playing" width="40" height="40" class="me-2 rounded"> <div> <div class="small player-track">Track Title Playing</div> <div class="small text-muted player-artist">Artist Name</div> </div> </div> <div class="d-flex align-items-center player-controls"> <button class="btn btn-sm btn-outline-light mx-1"><i class="bi bi-skip-start-fill"></i></button> <button class="btn btn-light mx-1"><i class="bi bi-play-fill"></i></button> <button class="btn btn-sm btn-outline-light mx-1"><i class="bi bi-skip-end-fill"></i></button> </div> <div class="d-flex align-items-center player-volume"> <i class="bi bi-volume-up me-1"></i> <input type="range" class="form-range" style="width: 80px;" id="volumeControl"> </div> </footer>
+        </div> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="js/mockup-gamification-script.js"></script>
+</body>
+</html>

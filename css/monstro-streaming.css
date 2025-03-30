@@ -1,0 +1,169 @@
+/* ============================ */
+/* Monstro Streaming Styles     */
+/* css/monstro-streaming.css    */
+/* ============================ */
+
+:root {
+    --monstro-royal-blue: royalblue; /* Define the accent color */
+    /* Or use a specific hex: --monstro-royal-blue: #4169E1; */
+    --monstro-light-bg: #ffffff;
+    --monstro-text-dark: #212529;
+    --monstro-text-muted: #6c757d;
+    --monstro-border-color: #dee2e6;
+  }
+  
+  body {
+    background-color: var(--monstro-light-bg);
+    color: var(--monstro-text-dark);
+  }
+  
+  /* --- Navbar --- */
+  .navbar {
+    /* Using bg-light class from Bootstrap */
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); /* Subtle shadow */
+  }
+  
+  .navbar-brand.monstro-brand {
+    color: var(--monstro-royal-blue);
+    font-weight: 600;
+  }
+  .navbar-light .navbar-nav .nav-link {
+      color: rgba(0, 0, 0, 0.65); /* Slightly darker links */
+  }
+  .navbar-light .navbar-nav .nav-link:hover,
+  .navbar-light .navbar-nav .nav-link:focus {
+      color: var(--monstro-royal-blue);
+  }
+  .navbar-light .navbar-nav .nav-link.active {
+      color: var(--monstro-royal-blue);
+      font-weight: 500;
+  }
+  
+  /* --- Section Titles --- */
+  .section-title {
+    color: var(--monstro-royal-blue);
+    border-bottom: 2px solid var(--monstro-royal-blue);
+    padding-bottom: 0.5rem;
+    display: inline-block; /* Keep border tight to text */
+  }
+  .section-title .bi {
+      vertical-align: -0.1em; /* Adjust icon alignment */
+  }
+  
+  /* --- Card Styling (Album & Song) --- */
+  .album-card, .song-card {
+    background-color: var(--monstro-light-bg);
+    border: 1px solid var(--monstro-border-color);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: flex; /* Ensure footer stays down */
+    flex-direction: column;
+  }
+  .album-card:hover, .song-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .album-card .card-img-top,
+  .song-card .card-img-top {
+      aspect-ratio: 1 / 1; /* Make images square */
+      object-fit: cover; /* Cover the area without distortion */
+  }
+  
+  
+  .album-card .card-body,
+  .song-card .card-body {
+      flex-grow: 1; /* Allow body to take space */
+  }
+  
+  .album-card .card-title,
+  .song-card .card-title {
+    color: var(--monstro-text-dark);
+    font-weight: 600;
+    font-size: 1rem; /* Slightly smaller titles */
+  }
+  .album-card .card-text,
+  .song-card .card-text {
+    color: var(--monstro-text-muted);
+  }
+  
+  .album-card .card-body .btn-outline-primary {
+    border-color: var(--monstro-royal-blue);
+    color: var(--monstro-royal-blue);
+    font-weight: 500;
+  }
+  .album-card .card-body .btn-outline-primary:hover {
+    background-color: var(--monstro-royal-blue);
+    color: white;
+  }
+  
+  .song-card .card-footer {
+    background-color: #f8f9fa; /* Light footer background */
+    border-top: 1px solid var(--monstro-border-color) !important;
+    padding: 0.75rem 1rem;
+  }
+  
+  .song-card .btn-primary {
+    background-color: var(--monstro-royal-blue);
+    border-color: var(--monstro-royal-blue);
+    font-size: 0.8rem; /* Smaller button */
+    font-weight: 500;
+    padding: .25rem .6rem;
+  }
+  .song-card .btn-primary:hover {
+    background-color: #3457b1; /* Darker royal blue */
+    border-color: #3457b1;
+  }
+  .song-card .btn-primary .bi {
+      vertical-align: -0.15em;
+  }
+  
+  
+  /* --- Modal Styling (Light Theme) --- */
+  #songModal .modal-content {
+    /* Use Bootstrap's default light background */
+     border-radius: .5rem; /* Slightly more rounded */
+  }
+  #songModal .modal-header {
+    background-color: #f8f9fa; /* Light header */
+    border-bottom-color: var(--monstro-border-color);
+  }
+  #songModal .modal-header .modal-title {
+      color: var(--monstro-royal-blue);
+      font-weight: 600;
+  }
+  #songModal .modal-footer {
+    background-color: #f8f9fa; /* Light footer */
+    border-top-color: var(--monstro-border-color);
+  }
+  
+  /* Ensure modal body text is readable */
+  #songModal .modal-body {
+      color: var(--monstro-text-dark);
+  }
+  #songModal .modal-body .text-muted {
+    color: var(--monstro-text-muted) !important;
+  }
+  #songModal .modal-body hr {
+    border-top-color: var(--monstro-border-color);
+  }
+  #songModal .modal-body dt {
+    color: var(--monstro-text-muted);
+    font-weight: 600;
+    font-size: 0.9em;
+  }
+  #songModal .modal-body dd {
+    color: var(--monstro-text-dark);
+     font-size: 0.9em;
+  }
+  #songModal .modal-body .audio-player-wrapper {
+      background-color: #f8f9fa;
+      padding: 0.75rem;
+      border-radius: .375rem;
+      border: 1px solid var(--monstro-border-color);
+  }
+  #songModal .modal-body .audio-player-wrapper label {
+      margin-bottom: .25rem;
+  }
+  
+  /* Ensure audio controls are visible on light background (Default should be fine) */
+  /* No specific overrides needed unless browser defaults look bad */

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mostro - Streaming</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/monstro-streaming.css" />
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-top">
+    <div class="container">
+      <a class="navbar-brand monstro-brand" href="#">
+        <i class="bi bi-disc me-2"></i>Mostro Streaming
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavStreaming" aria-controls="navbarNavStreaming" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavStreaming">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="mockup-fan-dashboard.html"><i class="bi bi-person-badge-fill me-1"></i>Fan Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="mockup-artist-dashboard.html"><i class="bi bi-speedometer2 me-1"></i>Artist Dashboard</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://picsum.photos/seed/useravatar/30" alt="User Avatar" class="rounded-circle me-1" width="30" height="30"> YourUsername
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="mockup-profile-settings.html">Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="mockup-login.html">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-4 mb-5">
+
+    <h2 class="mb-3 section-title"><i class="bi bi-journal-album me-2"></i>Albums</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-5">
+      <div class="col">
+        <div class="card h-100 shadow-sm album-card">
+          <img src="https://via.placeholder.com/300x300/eee/888?text=Album+1" class="card-img-top" alt="Album Title 1">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Album Title 1</h5>
+            <p class="card-text small text-muted flex-grow-1">Artist Name - Pop - 2025</p>
+            <a href="#" class="btn btn-sm btn-outline-primary mt-auto align-self-start">View Tracks</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 shadow-sm album-card">
+          <img src="https://via.placeholder.com/300x300/ddd/777?text=Album+2" class="card-img-top" alt="Album Title 2">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Greatest Hits</h5>
+            <p class="card-text small text-muted flex-grow-1">Artist Name - Rock - 2024</p>
+            <a href="#" class="btn btn-sm btn-outline-primary mt-auto align-self-start">View Tracks</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 shadow-sm album-card">
+          <img src="https://via.placeholder.com/300x300/ccc/666?text=Album+3" class="card-img-top" alt="Album Title 3">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Live Session EP</h5>
+            <p class="card-text small text-muted flex-grow-1">Artist Name - Acoustic - 2023</p>
+            <a href="#" class="btn btn-sm btn-outline-primary mt-auto align-self-start">View Tracks</a>
+          </div>
+        </div>
+      </div>
+       <div class="col">
+        <div class="card h-100 shadow-sm album-card">
+          <img src="https://via.placeholder.com/300x300/bbb/555?text=Album+4" class="card-img-top" alt="Album Title 4">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Synth Adventures</h5>
+            <p class="card-text small text-muted flex-grow-1">Artist Name - Electronic - 2025</p>
+            <a href="#" class="btn btn-sm btn-outline-primary mt-auto align-self-start">View Tracks</a>
+          </div>
+        </div>
+      </div>
+    </div><h2 class="mb-3 section-title"><i class="bi bi-music-note-list me-2"></i>Songs</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+      <div class="col">
+        <div class="card h-100 shadow-sm song-card">
+          <img src="https://via.placeholder.com/300x300/def/58a?text=Song+1" class="card-img-top" alt="Song Title 1">
+          <div class="card-body">
+            <h5 class="card-title">Song Title 1</h5>
+            <p class="card-text small text-muted">Artist Name 1 - Album Title 1</p>
+          </div>
+          <div class="card-footer d-flex justify-content-between align-items-center">
+            <span class="text-muted small">3:45</span>
+            <button type="button" class="btn btn-sm btn-primary song-details-btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#songModal"
+                    data-song-title="Song Title 1"
+                    data-artist-name="Artist Name 1"
+                    data-album-name="Album Title 1"
+                    data-genre="Pop"
+                    data-image-src="https://via.placeholder.com/300x300/def/58a?text=Song+1"
+                    data-preview-src="audio/preview1.mp3"
+                    data-full-src="audio/full1.mp3"
+                    data-mood="Happy"
+                    data-writer="Writer A, Writer B"
+                    data-producer="Producer X"
+                    data-publisher="Publisher Inc.">
+              <i class="bi bi-play-circle-fill me-1"></i> Play/Details
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 shadow-sm song-card">
+          <img src="https://via.placeholder.com/300x300/dde/76a?text=Song+2" class="card-img-top" alt="Song Title 2">
+          <div class="card-body">
+            <h5 class="card-title">Track Two</h5>
+            <p class="card-text small text-muted">Artist Name 2 - Greatest Hits</p>
+          </div>
+           <div class="card-footer d-flex justify-content-between align-items-center">
+            <span class="text-muted small">4:15</span>
+            <button type="button" class="btn btn-sm btn-primary song-details-btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#songModal"
+                    data-song-title="Track Two"
+                    data-artist-name="Artist Name 2"
+                    data-album-name="Greatest Hits"
+                    data-genre="Rock"
+                    data-image-src="https://via.placeholder.com/300x300/dde/76a?text=Song+2"
+                    data-preview-src="audio/preview2.mp3"
+                    data-full-src="audio/full2.mp3"
+                    data-mood="Energetic"
+                    data-writer="Writer C"
+                    data-producer="Producer Y"
+                    data-publisher="Music Co.">
+               <i class="bi bi-play-circle-fill me-1"></i> Play/Details
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 shadow-sm song-card">
+          <img src="https://via.placeholder.com/300x300/cce/68b?text=Song+3" class="card-img-top" alt="Song Title 3">
+          <div class="card-body">
+            <h5 class="card-title">Acoustic Jam</h5>
+            <p class="card-text small text-muted">Artist Name 1 - Live Session EP</p>
+          </div>
+           <div class="card-footer d-flex justify-content-between align-items-center">
+             <span class="text-muted small">2:58</span>
+             <button type="button" class="btn btn-sm btn-primary song-details-btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#songModal"
+                    data-song-title="Acoustic Jam"
+                    data-artist-name="Artist Name 1"
+                    data-album-name="Live Session EP"
+                    data-genre="Acoustic"
+                    data-image-src="https://via.placeholder.com/300x300/cce/68b?text=Song+3"
+                    data-preview-src="audio/preview3.mp3"
+                    data-full-src="audio/full3.mp3"
+                    data-mood="Chill"
+                    data-writer="Writer A"
+                    data-producer="Producer Z"
+                    data-publisher="Self-Published">
+               <i class="bi bi-play-circle-fill me-1"></i> Play/Details
+            </button>
+          </div>
+        </div>
+      </div>
+       <div class="col">
+        <div class="card h-100 shadow-sm song-card">
+          <img src="https://via.placeholder.com/300x300/bbc/579?text=Song+4" class="card-img-top" alt="Song Title 4">
+          <div class="card-body">
+            <h5 class="card-title">Future Beat</h5>
+            <p class="card-text small text-muted">Artist Name 3 - Synth Adventures</p>
+          </div>
+           <div class="card-footer d-flex justify-content-between align-items-center">
+             <span class="text-muted small">5:02</span>
+             <button type="button" class="btn btn-sm btn-primary song-details-btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#songModal"
+                    data-song-title="Future Beat"
+                    data-artist-name="Artist Name 3"
+                    data-album-name="Synth Adventures"
+                    data-genre="Electronic"
+                    data-image-src="https://via.placeholder.com/300x300/bbc/579?text=Song+4"
+                    data-preview-src="audio/preview4.mp3"
+                    data-full-src="audio/full4.mp3"
+                    data-mood="Driving"
+                    data-writer="Writer D"
+                    data-producer="Producer X"
+                    data-publisher="Synthwave Records">
+               <i class="bi bi-play-circle-fill me-1"></i> Play/Details
+            </button>
+          </div>
+        </div>
+      </div>
+    </div></div><div class="modal fade" id="songModal" tabindex="-1" aria-labelledby="songModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="songModalLabel">Song Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-4">
+            <div class="col-md-4 text-center">
+              <img src="https://via.placeholder.com/200x200/eee/888?text=Art" class="img-fluid rounded mb-3" alt="Song Image" id="modalSongImage">
+            </div>
+            <div class="col-md-8">
+              <h4 id="modalSongTitle">Song Title</h4>
+              <p class="lead text-muted mb-3" id="modalArtistName">Artist Name</p>
+
+              <div class="mb-3 audio-player-wrapper">
+                <label class="form-label small fw-bold text-uppercase text-muted">Preview:</label>
+                <audio controls class="w-100" id="modalPreviewAudio" preload="none">
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+              <div class="mb-3 audio-player-wrapper">
+                <label class="form-label small fw-bold text-uppercase text-muted">Full Version:</label>
+                <audio controls class="w-100" id="modalFullAudio" preload="none">
+                   Your browser does not support the audio element.
+                </audio>
+              </div>
+            </div>
+          </div><hr>
+          <div>
+            <h5 class="mb-3">Meta Data</h5>
+            <dl class="row meta-data-list">
+              <dt class="col-sm-3">Album</dt>
+              <dd class="col-sm-9" id="modalAlbumName">-</dd>
+
+              <dt class="col-sm-3">Genre</dt>
+              <dd class="col-sm-9" id="modalGenre">-</dd>
+
+              <dt class="col-sm-3">Mood</dt>
+              <dd class="col-sm-9" id="modalMood">-</dd>
+
+              <dt class="col-sm-3">Writer(s)</dt>
+              <dd class="col-sm-9" id="modalWriter">-</dd>
+
+              <dt class="col-sm-3">Producer(s)</dt>
+              <dd class="col-sm-9" id="modalProducer">-</dd>
+
+              <dt class="col-sm-3">Publisher(s)</dt>
+              <dd class="col-sm-9" id="modalPublisher">-</dd>
+            </dl>
+          </div>
+        </div><div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+      </div></div></div><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="js/monstro-streaming.js"></script>
+</body>
+</html>
