@@ -1,0 +1,129 @@
+/* css/main-style.css */
+body {
+    margin: 0;
+    /* Cool purple-blue gradient background */
+    background: linear-gradient(135deg, #1a1a4e 0%, #4a0e6c 100%);
+    background-attachment: fixed;
+    color: #e0e0ff;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-container {
+    max-width: 900px; /* Adjust max width as needed */
+}
+
+.main-title {
+    color: #c0c0ff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Style the tabs */
+.nav-tabs {
+    border-bottom-color: #6a44ff;
+}
+
+.nav-tabs .nav-link {
+    color: #a0a0dd;
+    background-color: rgba(10, 10, 30, 0.5);
+    border-color: #1a1a4e #1a1a4e #6a44ff;
+    margin-right: 5px;
+    border-radius: 5px 5px 0 0; /* Rounded top corners */
+}
+
+.nav-tabs .nav-link.active {
+    color: #e0e0ff;
+    background-color: rgba(30, 30, 70, 0.7); /* Slightly different active background */
+    border-color: #6a44ff #6a44ff #6a44ff; /* Match bottom border */
+    border-bottom-width: 2px; /* Make active tab bottom border thicker */
+}
+
+.nav-tabs .nav-link:hover {
+    border-color: #a0a0dd #a0a0dd #6a44ff;
+    color: #e0e0ff;
+}
+
+/* Style the content panes */
+.tab-content {
+    width: 100%; /* Ensure tab content takes full width */
+}
+
+.tab-pane {
+    padding: 15px;
+    background-color: rgba(0, 0, 20, 0.3); /* Slight background for game area */
+    border: 1px solid #6a44ff;
+    border-top: none; /* Remove top border as tabs handle it */
+    border-radius: 0 0 5px 5px; /* Rounded bottom corners */
+    width: 100%;
+    display: flex; /* Needed for the .game-area centering */
+    justify-content: center;
+}
+
+/* General styles for game area containers */
+.game-area {
+     /* Centering handled by parent .tab-pane flex */
+    width: 100%; /* Allow game area to define its max-width if needed */
+    max-width: 500px; /* Example max width */
+}
+
+/* Shared styles from previous game (can move common parts here) */
+.game-info {
+    color: #c0c0ff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: rgba(10, 10, 30, 0.5);
+    padding: 5px 15px;
+    border-radius: 5px;
+    max-width: 400px; /* Match canvas width */
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    box-sizing: border-box;
+}
+
+.game-info span {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.canvas-container {
+    width: 400px; /* Default canvas width */
+    height: 600px; /* Default canvas height */
+    position: relative;
+    box-shadow: 0 0 15px rgba(106, 68, 255, 0.5);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Specific canvas styles might go in gameX-style.css */
+canvas { /* Generic canvas style */
+    display: block;
+    position: relative;
+    z-index: 1;
+    border-radius: inherit;
+}
+
+.message-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #e0e0ff;
+    font-size: 2rem; font-weight: bold;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    text-align: center;
+    z-index: 10;
+    border-radius: inherit;
+    padding: 20px; box-sizing: border-box;
+}
+
+.game-controls button {
+    min-width: 120px;
+    margin: 5px;
+}
+
+.instructions {
+    font-size: 0.9rem;
+    color: #a0a0dd;
+    margin-top: 0.5rem;
+}

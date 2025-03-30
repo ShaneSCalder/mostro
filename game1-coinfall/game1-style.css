@@ -1,0 +1,36 @@
+/* game1-coinfall/game1-style.css */
+
+/* Styles specific to the Coin Fall game (Game 1) */
+
+/* Define the specific look for the Game 1 canvas */
+#game1Canvas {
+    border: 2px solid #6a44ff; /* Coin Fall's specific bright purple border */
+    background-color: rgba(10, 10, 30, 0.8); /* Coin Fall's specific dark background */
+    /* Other canvas properties like display, border-radius, z-index are likely handled by generic styles in main-style.css */
+}
+
+/* --- Optional Overrides --- */
+/* You generally won't need these if main-style.css is set up correctly, */
+/* but they are here as examples if you want to customize Game 1 further. */
+
+/* Example: If Game 1's info display needed a different text color */
+/*
+#game1-pane .game-info {
+    color: #d0d0ff;
+}
+*/
+
+/* Example: If Game 1's overlay needed a different background */
+/*
+#game1MessageOverlay {
+    background-color: rgba(20, 0, 30, 0.8);
+}
+*/
+
+/* Example: If Game 1's "Start" button needed a unique color */
+/*
+#game1StartButton {
+    background-color: #198754; // Standard Bootstrap green, maybe change?
+    border-color: #198754;
+}
+*/

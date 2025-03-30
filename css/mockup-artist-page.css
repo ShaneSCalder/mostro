@@ -1,0 +1,169 @@
+/* ============================ */
+/* Monstro Artist Page Styles   */
+/* css/mockup-artist-page.css   */
+/* ============================ */
+
+/* Assumes :root variables like --monstro-royal-blue are in mockup-style.css */
+
+/* --- Artist Header --- */
+.artist-header-public {
+    position: relative;
+    color: white;
+    padding-bottom: 80px; /* Space below banner for avatar overlap */
+    margin-bottom: -60px; /* Pull content below header up */
+}
+
+.banner-public {
+    height: 250px; /* Adjust banner height as needed */
+    background-color: #444; /* Fallback */
+    background-size: cover;
+    background-position: center center;
+    /* Optional: Add a subtle overlay */
+    position: relative;
+}
+.banner-public::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 100%);
+}
+
+.header-content-public {
+    position: relative; /* To sit above banner gradient */
+    margin-top: -80px; /* Pull content up over banner bottom */
+    z-index: 2;
+}
+
+.avatar-public {
+    width: 150px; /* Larger avatar */
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid white; /* White border */
+    background-color: #eee; /* Placeholder bg */
+    object-fit: cover;
+}
+
+.artist-info-public {
+    /* Aligns info baseline with avatar baseline */
+    margin-bottom: 10px; /* Space below text before buttons */
+}
+
+.artist-name-public {
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+.artist-name-public .bi-patch-check-fill {
+    vertical-align: middle; /* Align verified badge nicely */
+}
+
+.artist-stats-public {
+     text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+     font-weight: 500;
+}
+.artist-stats-public .bi {
+    vertical-align: -0.1em;
+}
+
+
+.action-buttons-public .btn {
+    font-weight: 500;
+    padding: .3rem .8rem; /* Adjust button size */
+    font-size: 0.9rem;
+}
+.action-buttons-public .btn-primary {
+    background-color: var(--monstro-royal-blue, royalblue);
+    border-color: var(--monstro-royal-blue, royalblue);
+}
+.action-buttons-public .btn-primary:hover {
+    background-color: #3457b1; /* Darker royal blue */
+    border-color: #3457b1;
+}
+
+
+/* --- Artist Page Tabs --- */
+.artist-page-tabs {
+    border-bottom: 1px solid var(--monstro-border-color, #dee2e6);
+}
+.artist-page-tabs .nav-link {
+    color: var(--monstro-text-muted, #6c757d);
+    font-weight: 500;
+    border: none;
+    border-bottom: 3px solid transparent;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+.artist-page-tabs .nav-link i {
+    margin-right: 0.4rem;
+}
+
+.artist-page-tabs .nav-link:hover {
+    color: var(--monstro-royal-blue, royalblue);
+}
+
+.artist-page-tabs .nav-link.active {
+    color: var(--monstro-royal-blue, royalblue);
+    background-color: transparent;
+    border-color: var(--monstro-royal-blue, royalblue);
+    font-weight: 600;
+}
+
+/* --- Content Sections --- */
+.tab-content {
+    padding-top: 1.5rem; /* Space between tabs and content */
+}
+
+/* Feed Post Card Styles */
+.post-card {
+    border: 1px solid var(--monstro-border-color, #dee2e6);
+    border-radius: .5rem;
+}
+.post-card .card-body {
+     padding: 1.25rem;
+}
+.post-card .post-actions button {
+    font-size: 0.85rem;
+    color: var(--monstro-text-muted, #6c757d);
+}
+.post-card .post-actions button:hover {
+    color: var(--monstro-text-dark, #212529);
+}
+.post-card .post-actions .bi-heart-fill { /* Example for liked state */
+    color: var(--bs-danger);
+}
+.embedded-player-public {
+     font-size: 0.9em;
+}
+.embedded-player-public span {
+    color: var(--monstro-text-dark, #212529);
+}
+
+/* Music Section Styles */
+#music h3, #music h4 {
+    color: var(--monstro-royal-blue, royalblue);
+    font-weight: 600;
+    margin-top: 1.5rem;
+}
+.album-grid-card .card-body, .merch-card .card-body {
+    padding: 0.75rem; /* Smaller padding for grid cards */
+}
+.album-grid-card .card-title, .merch-card .card-title {
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
+}
+
+/* Shows Section List */
+#shows .list-group-item {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+#shows .btn-success { /* Tickets button */
+    background-color: #198754;
+    border-color: #198754;
+}
+
+/* --- General --- */
+/* Ensure player bar placeholder has space */
+body {
+    padding-bottom: 70px; /* Height of player bar + some margin */
+}

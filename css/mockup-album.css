@@ -1,0 +1,139 @@
+/* css/mockup-album.css */
+
+body {
+    background-color: #f8f9fa; /* Light background */
+    color: #495057;
+    font-family: 'Roboto', sans-serif; /* Example different font */
+}
+
+/* Header Section Styling */
+.album-header {
+    /* Optional: Add a subtle background gradient or color */
+    /* background: linear-gradient(to bottom, #ffffff, #f0f2f5); */
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+.album-cover {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px; /* Limit max height */
+    object-fit: contain;
+    margin-bottom: 1rem; /* Space below image on small screens */
+}
+
+.album-title {
+    color: #212529;
+}
+
+.artist-name a {
+    color: #0d6efd; /* Bootstrap primary */
+    font-weight: 500;
+}
+.artist-name a:hover {
+    text-decoration: underline !important; /* Ensure underline */
+}
+
+.release-info {
+    font-size: 0.95em;
+}
+
+.action-buttons .btn {
+    font-size: 1rem; /* Adjust button size */
+    padding: 0.75rem 1.25rem;
+}
+.action-buttons .btn i {
+    font-size: 1.1em; /* Icon size relative to button text */
+    vertical-align: middle; /* Align icon nicely */
+}
+
+
+/* Tracklist Styling */
+.section-title {
+    font-weight: 600;
+    color: #343a40;
+    border-bottom: 2px solid #dee2e6;
+    padding-bottom: 0.5rem;
+}
+
+.track-list .list-group-item {
+    background-color: transparent; /* Make items blend with page background */
+    border-bottom: 1px solid #e9ecef; /* Lighter separator */
+    padding: 0.85rem 1rem;
+    transition: background-color 0.15s ease-in-out;
+}
+.track-list .list-group-item:last-child {
+    border-bottom: none;
+}
+
+.track-list .list-group-item:hover {
+    background-color: #ffffff; /* Highlight on hover */
+}
+
+.track-number {
+    color: #6c757d;
+    min-width: 2.5em; /* Align track titles */
+    display: inline-block;
+    text-align: right;
+}
+
+.track-title {
+    color: #212529;
+}
+
+.track-actions .btn {
+    padding: 0.2rem 0.5rem; /* Smaller buttons */
+    font-size: 0.9rem;
+    line-height: 1; /* Ensure icon fits */
+}
+.track-actions .btn i {
+     font-size: 1.1em; /* Icon size */
+     vertical-align: middle;
+}
+.track-actions .track-duration {
+    font-size: 0.9em;
+}
+
+/* About/Related Section */
+.about-section p, .related-section p {
+    line-height: 1.7;
+    color: #495057;
+}
+
+.related-section .card {
+    border: 1px solid #dee2e6;
+    transition: box-shadow 0.2s ease-in-out;
+}
+.related-section .card:hover {
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Footer Styling */
+.footer-section {
+  font-size: 0.9em;
+  border-top: 1px solid #dee2e6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+    .album-header {
+        text-align: center;
+    }
+    .album-cover {
+         max-width: 80%; /* Don't let cover dominate small screens */
+         margin-left: auto;
+         margin-right: auto;
+    }
+    .action-buttons .btn {
+        display: block; /* Stack buttons on small screens */
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .action-buttons .btn + .btn {
+        margin-top: 0.5rem; /* Space between stacked buttons */
+    }
+     .track-actions .track-duration {
+         display: none; /* Hide duration on very small screens */
+     }
+}

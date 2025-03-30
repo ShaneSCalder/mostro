@@ -1,0 +1,13 @@
+/* game2-puzzle/game2-style.css */
+
+/* Add specific styles for Game 2 here */
+/* Example: Style the canvas differently */
+#game2Canvas {
+    border: 2px dashed #ff00ff; /* Magenta dashed border for distinction */
+    background-color: rgba(30, 10, 30, 0.8);
+}
+
+/* Example: Maybe different info display colors */
+#game2-pane .game-info {
+    color: #ffc0ff;
+}

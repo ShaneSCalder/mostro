@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>YourUsername's Profile - Monstro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/mockup-style.css">
+    <link rel="stylesheet" href="css/mockup-fan-page.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand monstro-brand-light" href="mockup-fan-dashboard.html"> <i class="bi bi-headphones me-2"></i>Monstro </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavFan" aria-controls="navbarNavFan" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+            <div class="collapse navbar-collapse" id="navbarNavFan">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item"><a class="nav-link" href="mockup-fan-dashboard.html">Dashboard</a></li>
+                     <li class="nav-item"><a class="nav-link" href="mockup-streaming.html"><i class="bi bi-binoculars me-1"></i>Browse</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mockup-gamification.html"><i class="bi bi-joystick me-1"></i>Gamification</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mockup-rewards.html"><i class="bi bi-gift me-1"></i>Rewards Hub</a></li>
+                     <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-collection-play me-1"></i>My Library</a></li>
+                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="mockup-fan-page.html"><i class="bi bi-person-circle me-1"></i>My Profile</a></li> </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <form class="d-flex me-lg-3 mb-2 mb-lg-0" role="search"><input class="form-control form-control-sm" type="search" placeholder="Search Music..." aria-label="Search"><button class="btn btn-sm btn-outline-info" type="submit"><i class="bi bi-search"></i></button></form>
+                     <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="https://picsum.photos/seed/useravatar/30" alt="User Avatar" class="rounded-circle me-1" width="30" height="30"> YourUsername</a>
+                        <ul class="dropdown-menu dropdown-menu-end"><li><a class="dropdown-item" href="mockup-profile-settings.html">Settings</a></li><li><hr class="dropdown-divider"></li><li><a class="dropdown-item" href="mockup-login.html">Logout</a></li></ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-4 mb-5 pb-extra"> <div class="row g-4">
+
+            <div class="col-lg-4">
+                 <div class="card shadow-sm profile-sidebar sticky-lg-top">
+                    <div class="card-body text-center">
+                        <img src="https://picsum.photos/seed/useravatar/150" alt="Your Avatar" class="profile-avatar rounded-circle mb-3">
+                        <h3 class="profile-name mb-1">YourUsername</h3>
+                        <p class="profile-handle text-muted mb-3">@yourhandle</p>
+                        <p class="profile-bio small mb-3">
+                            Just a fan of good tunes. Making playlists and discovering new artists. Based in Malta 🇲🇹. Following indie rock & synthwave.
+                        </p>
+                        <div class="d-flex justify-content-center gap-3 mb-3 profile-stats">
+                            <div><strong>150</strong> <span class="text-muted small">Following</span></div>
+                            <div><strong>85</strong> <span class="text-muted small">Followers</span></div>
+                            <div><strong>12</strong> <span class="text-muted small">Playlists</span></div>
+                        </div>
+                        <a href="mockup-profile-settings.html" class="btn btn-sm btn-outline-secondary">Edit Profile</a>
+                         <div class="mt-3 text-center small profile-links">
+                            <a href="#" class="text-decoration-none me-2">View Following</a> |
+                            <a href="#" class="text-decoration-none ms-2">View Followers</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+
+                <ul class="nav nav-tabs profile-tabs mb-4" id="profileTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="feed-tab-profile" data-bs-toggle="tab" data-bs-target="#profile-feed" type="button" role="tab" aria-controls="profile-feed" aria-selected="true"><i class="bi bi-list-ul me-1"></i> Activity Feed</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="playlists-tab-profile" data-bs-toggle="tab" data-bs-target="#profile-playlists" type="button" role="tab" aria-controls="profile-playlists" aria-selected="false"><i class="bi bi-music-note-list me-1"></i> Public Playlists</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="profileTabContent">
+
+                    <div class="tab-pane fade show active" id="profile-feed" role="tabpanel" aria-labelledby="feed-tab-profile">
+                        <h4 class="mb-3 feed-title">Recent Activity</h4>
+
+                        <div class="card fan-feed-item mb-3 shadow-sm">
+                            <div class="card-body">
+                                <p class="small text-muted feed-item-meta mb-2"><i class="bi bi-heart-fill text-danger me-1"></i> You liked a song • 2h ago</p>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://picsum.photos/seed/likedSong1/60" alt="Song Art" width="50" height="50" class="rounded me-3">
+                                    <div>
+                                        <h6 class="mb-0 feed-item-title">Awesome Track Title</h6>
+                                        <small class="text-muted">by Artist Name A</small>
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-secondary ms-auto like-button active"><i class="bi bi-heart-fill"></i> Liked</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card fan-feed-item mb-3 shadow-sm">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-2">
+                                     <img src="https://picsum.photos/seed/artistFeed/40" alt="Artist Avatar" class="rounded-circle me-2" width="35" height="35">
+                                     <div>
+                                         <strong class="feed-item-title">Artist Name B</strong>
+                                         <small class="text-muted d-block">posted • 5h ago</small>
+                                     </div>
+                                </div>
+                                <p>New tour dates announced! Can't wait to see you all on the road. Check the Shows tab on our profile! #TourLife #NewMusic</p>
+                                <div class="post-actions mt-2">
+                                    <button class="btn btn-sm btn-outline-danger me-2 like-button"><i class="bi bi-heart"></i> Like (88)</button>
+                                    <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-chat-dots"></i> Comment (7)</button>
+                                </div>
+                            </div>
+                        </div>
+
+                         <div class="card fan-feed-item mb-3 shadow-sm">
+                             <div class="card-body">
+                                 <p class="small text-muted feed-item-meta mb-2"><i class="bi bi-share-fill text-success me-1"></i> You shared a playlist • 1d ago</p>
+                                 <div class="d-flex align-items-center">
+                                     <img src="https://picsum.photos/seed/sharedPlaylist/60" alt="Playlist Art" width="50" height="50" class="rounded me-3">
+                                     <div>
+                                         <h6 class="mb-0 feed-item-title">Synthwave Dreams</h6>
+                                         <small class="text-muted">Your public playlist</small>
+                                     </div>
+                                     </div>
+                             </div>
+                         </div>
+
+                         <div class="card fan-feed-item mb-3 shadow-sm">
+                            <div class="card-body">
+                                <p class="small text-muted feed-item-meta mb-2"><i class="bi bi-person-plus-fill text-primary me-1"></i> You followed an artist • 2d ago</p>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://picsum.photos/seed/followedArtist/60" alt="Artist Art" width="50" height="50" class="rounded-circle me-3"> <div>
+                                        <h6 class="mb-0 feed-item-title">Emerging Artist C</h6>
+                                        <small class="text-muted">Indie Electronic</small>
+                                    </div>
+                                    <button class="btn btn-sm btn-secondary ms-auto">Following</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <button class="btn btn-outline-secondary btn-sm" id="loadMoreFeed">Load More Activity</button>
+                        </div>
+
+                    </div><div class="tab-pane fade" id="profile-playlists" role="tabpanel" aria-labelledby="playlists-tab-profile">
+                         <h4 class="mb-3 feed-title">Your Public Playlists</h4>
+                         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                            <div class="col">
+                                <div class="card playlist-card h-100 shadow-sm">
+                                    <img src="https://picsum.photos/seed/playlist1/300/200" class="card-img-top" alt="Playlist 1 Cover">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Synthwave Dreams</h6>
+                                        <p class="card-text small text-muted">15 Tracks • Public</p>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-0 text-end">
+                                         <button class="btn btn-sm btn-primary"><i class="bi bi-play-fill"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="col">
+                                <div class="card playlist-card h-100 shadow-sm">
+                                    <img src="https://picsum.photos/seed/playlist2/300/200" class="card-img-top" alt="Playlist 2 Cover">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Focus Flow</h6>
+                                        <p class="card-text small text-muted">22 Tracks • Public</p>
+                                    </div>
+                                     <div class="card-footer bg-transparent border-0 text-end">
+                                         <button class="btn btn-sm btn-primary"><i class="bi bi-play-fill"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                             </div>
+                    </div></div></div></div></div><footer class="player-bar-mockup fixed-bottom bg-dark text-light p-2 d-flex align-items-center justify-content-between"> <div class="d-flex align-items-center"> <img src="https://picsum.photos/seed/nowplaying/50" alt="Now Playing" width="40" height="40" class="me-2 rounded"> <div> <div class="small player-track">Track Title Playing</div> <div class="small text-muted player-artist">Artist Name</div> </div> </div> <div class="d-flex align-items-center player-controls"> <button class="btn btn-sm btn-outline-light mx-1"><i class="bi bi-skip-start-fill"></i></button> <button class="btn btn-light mx-1"><i class="bi bi-play-fill"></i></button> <button class="btn btn-sm btn-outline-light mx-1"><i class="bi bi-skip-end-fill"></i></button> </div> <div class="d-flex align-items-center player-volume"> <i class="bi bi-volume-up me-1"></i> <input type="range" class="form-range" style="width: 80px;" id="volumeControl"> </div> </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="js/mockup-fan-page.js"></script>
+</body>
+</html>

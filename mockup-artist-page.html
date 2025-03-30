@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Artist Name - Monstro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/mockup-style.css">
+    <link rel="stylesheet" href="css/mockup-artist-page.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-top">
+        <div class="container">
+            <a class="navbar-brand monstro-brand" href="mockup-homepage-fan.html"> <i class="bi bi-headphones me-2"></i>Monstro
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPublic" aria-controls="navbarPublic" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarPublic">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="mockup-streaming.html"><i class="bi bi-binoculars me-1"></i>Browse</a>
+                    </li>
+                     </ul>
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="mockup-login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-sm btn-outline-primary ms-2" href="mockup-signup.html">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="artist-public-page">
+
+        <header class="artist-header-public">
+            <div class="banner-public" style="background-image: url('https://picsum.photos/seed/artistbannerpublic/1200/300');">
+                </div>
+            <div class="header-content-public container">
+                <div class="d-flex align-items-end">
+                    <img src="https://picsum.photos/seed/artistavatar/150" alt="Artist Avatar" class="avatar-public shadow">
+                    <div class="artist-info-public ms-3">
+                        <h1 class="artist-name-public display-5 mb-1">Artist Name <i class="bi bi-patch-check-fill text-info ms-2 fs-5" title="Verified Artist"></i></h1>
+                        <p class="artist-stats-public text-light small mb-2">
+                            <i class="bi bi-headset"></i> 1.5M Monthly Listeners &nbsp;•&nbsp; <i class="bi bi-person-plus-fill"></i> 500K Followers
+                        </p>
+                        <div class="action-buttons-public mt-2">
+                            <button class="btn btn-primary btn-sm" id="follow-btn-public"><i class="bi bi-person-plus-fill me-1"></i> Follow</button>
+                            <button class="btn btn-light btn-sm ms-2"><i class="bi bi-play-circle-fill me-1"></i> Play Top Tracks</button>
+                            <button class="btn btn-outline-light btn-sm ms-2"><i class="bi bi-three-dots"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="container mt-4 mb-5">
+            <ul class="nav nav-tabs artist-page-tabs mb-4" id="artistTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="feed-tab" data-bs-toggle="tab" data-bs-target="#feed" type="button" role="tab" aria-controls="feed" aria-selected="true"><i class="bi bi-newspaper me-1"></i> Feed</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="music-tab" data-bs-toggle="tab" data-bs-target="#music" type="button" role="tab" aria-controls="music" aria-selected="false"><i class="bi bi-music-note-beamed me-1"></i> Music</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="shows-tab" data-bs-toggle="tab" data-bs-target="#shows" type="button" role="tab" aria-controls="shows" aria-selected="false"><i class="bi bi-calendar-event me-1"></i> Shows</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="merch-tab" data-bs-toggle="tab" data-bs-target="#merch" type="button" role="tab" aria-controls="merch" aria-selected="false"><i class="bi bi-shop me-1"></i> Merch</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="about-tab" data-bs-toggle="tab" data-bs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="false"><i class="bi bi-info-circle me-1"></i> About</button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="artistTabContent">
+
+                <div class="tab-pane fade show active" id="feed" role="tabpanel" aria-labelledby="feed-tab">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto"> <h3 class="mb-3">Artist Updates</h3>
+                            <div class="card post-card mb-3 shadow-sm">
+                                <div class="card-body">
+                                    <p class="card-text small text-muted mb-2">Artist Name • 2h ago</p>
+                                    <p class="card-text">Check out the new single "Track Title"! Link in player below 👇 So excited for you to hear it!</p>
+                                    <div class="embedded-player-public p-2 border rounded bg-light d-flex align-items-center mb-2">
+                                        <img src="https://picsum.photos/seed/track1art/50" alt="Track Art" width="40" height="40" class="rounded me-2">
+                                        <span class="flex-grow-1 small">Track Title - Artist Name</span>
+                                        <button class="btn btn-sm btn-outline-secondary ms-2"><i class="bi bi-play-fill"></i></button>
+                                    </div>
+                                    <div class="post-actions mt-2">
+                                        <button class="btn btn-sm btn-outline-danger me-2"><i class="bi bi-heart"></i> Like (150)</button>
+                                        <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-chat-dots"></i> Comment (12)</button>
+                                        </div>
+                                </div>
+                            </div>
+                             <div class="card post-card mb-3 shadow-sm">
+                                <img src="https://picsum.photos/seed/postimage1/800/400" class="card-img-top" alt="Post image placeholder">
+                                <div class="card-body">
+                                    <p class="card-text small text-muted mb-2">Artist Name • 1d ago</p>
+                                    <p class="card-text">Behind the scenes from the studio session today! 🎶 Lots of new sounds coming soon.</p>
+                                     <div class="post-actions mt-2">
+                                        <button class="btn btn-sm btn-outline-danger me-2"><i class="bi bi-heart-fill"></i> Liked (301)</button> <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-chat-dots"></i> Comment (25)</button>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="music" role="tabpanel" aria-labelledby="music-tab">
+                    <h3 class="mb-3">Music Catalog</h3>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="row g-0">
+                            <div class="col-md-3">
+                                <img src="https://picsum.photos/seed/latestalbum/300" class="img-fluid rounded-start" alt="Latest Album Art">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h5 class="card-title">Latest Release: Album Title (2025)</h5>
+                                    <p class="card-text">Description of the latest album or single. Lorem ipsum dolor sit amet consectetur.</p>
+                                    <button class="btn btn-primary btn-sm"><i class="bi bi-play-fill"></i> Play Album</button>
+                                    <button class="btn btn-outline-secondary btn-sm ms-2"><i class="bi bi-heart"></i> Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="mb-3">Top Tracks</h4>
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span>1. Track 1</span>
+                            <span><button class="btn btn-sm btn-outline-secondary me-2"><i class="bi bi-heart"></i></button><button class="btn btn-sm btn-primary"><i class="bi bi-play-fill"></i></button></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                             <span>2. Track 2</span>
+                             <span><button class="btn btn-sm btn-outline-secondary me-2"><i class="bi bi-heart"></i></button><button class="btn btn-sm btn-primary"><i class="bi bi-play-fill"></i></button></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                             <span>3. Track 3</span>
+                             <span><button class="btn btn-sm btn-outline-secondary me-2"><i class="bi bi-heart"></i></button><button class="btn btn-sm btn-primary"><i class="bi bi-play-fill"></i></button></span>
+                        </li>
+                    </ul>
+                    <h4 class="mb-3">Albums</h4>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+                        <div class="col">
+                            <div class="card album-grid-card shadow-sm h-100">
+                                <img src="https://picsum.photos/seed/albumA/300" class="card-img-top" alt="Album A Art">
+                                <div class="card-body">
+                                    <h6 class="card-title small">Album A (2023)</h6>
+                                    <button class="btn btn-sm btn-outline-primary w-100 mt-2">View</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                             <div class="card album-grid-card shadow-sm h-100">
+                                <img src="https://picsum.photos/seed/albumB/300" class="card-img-top" alt="Album B Art">
+                                <div class="card-body">
+                                     <h6 class="card-title small">Album B (2021)</h6>
+                                     <button class="btn btn-sm btn-outline-primary w-100 mt-2">View</button>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col">
+                             <div class="card album-grid-card shadow-sm h-100">
+                                <img src="https://picsum.photos/seed/albumC/300" class="card-img-top" alt="Album C Art">
+                                <div class="card-body">
+                                    <h6 class="card-title small">Album C (2019)</h6>
+                                     <button class="btn btn-sm btn-outline-primary w-100 mt-2">View</button>
+                                </div>
+                            </div>
+                        </div>
+                         </div>
+                </div>
+
+                <div class="tab-pane fade" id="shows" role="tabpanel" aria-labelledby="shows-tab">
+                    <h3 class="mb-3">Upcoming Shows</h3>
+                    <ul class="list-group">
+                         <li class="list-group-item d-flex justify-content-between align-items-center">
+                             <div>
+                                 <strong>Apr 10, 2025</strong> - City A, Venue X <br>
+                                 <small class="text-muted">Headline Show</small>
+                             </div>
+                             <a href="#" class="btn btn-sm btn-success">Tickets</a>
+                         </li>
+                         <li class="list-group-item d-flex justify-content-between align-items-center">
+                             <div>
+                                 <strong>Apr 15, 2025</strong> - City B, Venue Y <br>
+                                 <small class="text-muted">Festival Appearance</small>
+                             </div>
+                              <a href="#" class="btn btn-sm btn-success">Tickets</a>
+                         </li>
+                         <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <div>
+                                 <strong>May 01, 2025</strong> - City C, Venue Z <br>
+                                 <small class="text-muted">Support Slot</small>
+                             </div>
+                              <span class="badge bg-danger rounded-pill">Sold Out</span>
+                         </li>
+                          </ul>
+                </div>
+
+                <div class="tab-pane fade" id="merch" role="tabpanel" aria-labelledby="merch-tab">
+                     <h3 class="mb-3">Merchandise</h3>
+                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+                         <div class="col">
+                             <div class="card merch-card shadow-sm h-100">
+                                <img src="https://picsum.photos/seed/merch1/300" class="card-img-top" alt="Merch Item 1">
+                                <div class="card-body text-center">
+                                    <h6 class="card-title small">Artist T-Shirt</h6>
+                                    <p class="card-text fw-bold">€25.00</p>
+                                    <a href="#" class="btn btn-sm btn-outline-primary w-100">View Item</a>
+                                </div>
+                            </div>
+                         </div>
+                          <div class="col">
+                             <div class="card merch-card shadow-sm h-100">
+                                <img src="https://picsum.photos/seed/merch2/300" class="card-img-top" alt="Merch Item 2">
+                                <div class="card-body text-center">
+                                    <h6 class="card-title small">Latest Album Vinyl</h6>
+                                    <p class="card-text fw-bold">€30.00</p>
+                                     <a href="#" class="btn btn-sm btn-outline-primary w-100">View Item</a>
+                                </div>
+                            </div>
+                         </div>
+                          <div class="col">
+                             <div class="card merch-card shadow-sm h-100">
+                                <img src="https://picsum.photos/seed/merch3/300" class="card-img-top" alt="Merch Item 3">
+                                <div class="card-body text-center">
+                                     <h6 class="card-title small">Logo Beanie</h6>
+                                    <p class="card-text fw-bold">€18.00</p>
+                                     <a href="#" class="btn btn-sm btn-outline-primary w-100">View Item</a>
+                                </div>
+                            </div>
+                         </div>
+                          </div>
+                </div>
+
+                <div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="about-tab">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto"> <h3 class="mb-3">About Artist Name</h3>
+                            <p class="lead">This is the artist's biography. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                            <hr class="my-4">
+                            <h4 class="mb-3">Links</h4>
+                            <p>
+                                <a href="#" class="me-3 text-decoration-none"><i class="bi bi-globe me-1"></i> Official Website</a>
+                                <a href="#" class="me-3 text-decoration-none"><i class="bi bi-instagram me-1"></i> Instagram</a>
+                                <a href="#" class="me-3 text-decoration-none"><i class="bi bi-twitter-x me-1"></i> X (Twitter)</a>
+                                </p>
+                             <h4 class="mb-3 mt-4">Genres</h4>
+                             <p>
+                                 <span class="badge bg-secondary me-1">Indie Pop</span>
+                                 <span class="badge bg-secondary me-1">Alternative Rock</span>
+                                 <span class="badge bg-secondary">Synthwave</span>
+                             </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div> </div> </div> <footer class="player-bar-mockup fixed-bottom bg-dark text-light p-2 d-flex align-items-center justify-content-between">
+         <div class="d-flex align-items-center"> <img src="https://picsum.photos/seed/nowplaying/50" alt="Now Playing" width="40" height="40" class="me-2 rounded"> <div> <div class="small player-track">Track Title Playing</div> <div class="small text-muted player-artist">Artist Name</div> </div> </div> <div class="d-flex align-items-center player-controls"> <button class="btn btn-sm btn-outline-light mx-1"><i class="bi bi-skip-start-fill"></i></button> <button class="btn btn-light mx-1"><i class="bi bi-play-fill"></i></button> <button class="btn btn-sm btn-outline-light mx-1"><i class="bi bi-skip-end-fill"></i></button> </div> <div class="d-flex align-items-center player-volume"> <i class="bi bi-volume-up me-1"></i> <input type="range" class="form-range" style="width: 80px;" id="volumeControl"> </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="js/mockup-artist-page.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Game Arcade</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/mockup-games.css">
+
+    <link rel="stylesheet" href="game1-coinfall/game1-style.css">
+    <link rel="stylesheet" href="game2-puzzle/game2-style.css">
+
+    <style>
+        /* Optional: Add extra vertical spacing for very small screens */
+        @media (max-height: 700px) {
+            .main-container {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container main-container d-flex flex-column justify-content-start align-items-center py-3">
+        <h1 class="main-title text-center mb-3">Game Arcade</h1>
+
+        <ul class="nav nav-tabs mb-3" id="gameTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="game1-tab" data-bs-toggle="tab" data-bs-target="#game1-pane" type="button" role="tab" aria-controls="game1-pane" aria-selected="true">Coin Fall</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="game2-tab" data-bs-toggle="tab" data-bs-target="#game2-pane" type="button" role="tab" aria-controls="game2-pane" aria-selected="false">Puzzle Blocks</button>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="gameTabContent">
+
+            <div class="tab-pane fade show active" id="game1-pane" role="tabpanel" aria-labelledby="game1-tab">
+                <div class="game-area game1-container d-flex flex-column justify-content-center align-items-center">
+                    <div class="game-info d-flex flex-wrap justify-content-around w-100 mb-2">
+                        <span>Level: <span id="game1LevelDisplay">1</span></span>
+                        <span>Score: <span id="game1ScoreDisplay">0</span></span>
+                        <span>Target: <span id="game1TargetDisplay">100</span></span>
+                        <span>Misses Left: <span id="game1LivesDisplay">10</span></span>
+                    </div>
+                    <div class="canvas-container position-relative mb-3">
+                         <canvas id="game1Canvas" width="400" height="600">Canvas not supported.</canvas>
+                         <div id="game1MessageOverlay" class="message-overlay d-none">
+                             <div id="game1MessageText">Paused</div>
+                             <button id="game1NextLevelButton" class="btn btn-primary mt-3 d-none">Start Level 2</button>
+                         </div>
+                    </div>
+                    <div class="game-controls text-center">
+                        <button id="game1StartButton" class="btn btn-lg btn-success me-2">Start Game</button>
+                        <button id="game1PauseButton" class="btn btn-lg btn-warning" disabled>Pause</button>
+                    </div>
+                    <div class="instructions text-center mt-2 px-2">
+                        Use Left/Right Arrow Keys. 'P' to Pause. Enter for next level/restart.
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="game2-pane" role="tabpanel" aria-labelledby="game2-tab">
+                 <div class="game-area game2-container d-flex flex-column justify-content-center align-items-center">
+                    <div class="game-info d-flex flex-wrap justify-content-around w-100 mb-2">
+                        <span>Score: <span id="game2ScoreDisplay">0</span></span>
+                        <span>Level: <span id="game2LevelDisplay">1</span></span>
+                        <span>Target: <span id="game2TargetDisplay">0</span></span>
+                    </div>
+                     <div class="canvas-container position-relative mb-3">
+                         <canvas id="game2Canvas" width="400" height="600">Canvas not supported.</canvas>
+                          <div id="game2MessageOverlay" class="message-overlay d-none">
+                             <div id="game2MessageText">Paused</div>
+                             <button id="game2NextLevelButton" class="btn btn-primary mt-3 d-none">Start Next Level</button>
+                         </div>
+                     </div>
+                     <div class="game-controls text-center">
+                        <button id="game2StartButton" class="btn btn-lg btn-success me-2">Start Puzzle</button>
+                        <button id="game2PauseButton" class="btn btn-lg btn-warning" disabled>Pause</button>
+                    </div>
+                    <div class="instructions text-center mt-2 px-2">
+                        Click groups of 3+ matching colors. 'P' to Pause. Enter for next level/restart.
+                    </div>
+                </div>
+            </div>
+
+        </div></div><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="game1-coinfall/game1.js"></script>
+    <script src="game2-puzzle/game2.js"></script>
+
+    </body>
+</html>
